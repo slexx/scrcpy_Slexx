@@ -67,7 +67,7 @@ switch($input)
 	
 	l {
 		.\adb kill-server
-		Read-Host -prompt "ADB Server killed... 1/3"
+		Read-Host -prompt "ADB Server killed... 1/2"
 		.\adb usb #Reset the ADB to USB mode
 		Read-Host -prompt "ADB Set to USB... 2/2"
 		user_input
