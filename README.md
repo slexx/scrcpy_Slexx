@@ -1,7 +1,8 @@
 # scrcpy_Slexx
+```
 Shortcuts
 
-`
+
 Action	Shortcut	Shortcut (macOS)
 Switch fullscreen mode	Ctrl+f	Cmd+f
 Resize window to 1:1 (pixel-perfect)	Ctrl+g	Cmd+g
@@ -21,4 +22,4 @@ Copy device clipboard to computer	Ctrl+c	Cmd+c
 Paste computer clipboard to device	Ctrl+v	Cmd+v
 Copy computer clipboard to device	Ctrl+Shift+v	Cmd+Shift+v
 Enable/disable FPS counter (on stdout)	Ctrl+i	Cmd+i
-`
+```
