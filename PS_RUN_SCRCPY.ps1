@@ -5,7 +5,10 @@ Write-Host "you chose 1"
 Write-Host "you chose 2"
 }else{
 Write-Host "Enter correct choice please.."
-} #>
+} 
+
+OLD SHIT, IGNORE
+#>
 
 <#
 Source: https://github.com/Genymobile/scrcpy
@@ -63,7 +66,10 @@ switch($input)
 		.\adb devices #check if the device is detected first
 	}
 	x {exit}
-	t {'Test Complete..'}
+	t {
+	'Test Complete..'
+	pause	
+	}
     default {'Try again..'}
 }
 #pause

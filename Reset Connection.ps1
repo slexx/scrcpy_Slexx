@@ -1,7 +1,7 @@
 .\adb kill-server
-Read-Host -prompt "Enter to Continue.."
+Read-Host -prompt "ADB Server killed! 1/4"
 .\adb devices #check if the device is detected first
-Read-Host -prompt "Hit enter if device is detected above, Otherwise close the window!... 1/3"
+Read-Host -prompt "Hit enter if device(s) are detected above, Otherwise close the window!... 2/4"
 .\adb usb #Reset the ADB to USB mode
 Read-Host -prompt "Enter to continue.. 2/3"
 .\adb tcpip 5555 #Re-Set to TCPIP MOde, set port to 5555
