@@ -49,6 +49,7 @@ OPTIONS:
 	return $input #on a correct answer- returns answer for use
 }
 
+
 function test_func($a){
     $a = Read-Host 'What would you like to store in this var?'
     Write-Host $a ' is what you passed to this function!'
@@ -66,6 +67,7 @@ function Kill_ADB{
 		return
 }
 
+#1. Kills ADB (To Reset) 2. sets ADB to USB
 function Wifi_ADB{
 		Kill_ADB
 		
