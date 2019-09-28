@@ -26,8 +26,10 @@ Creator: SlexxSAE
 
 #This func will ask for user input and check if the $input matches any of the values in $array, otherwise calling itself again
 function user_input{
-	$array = "w","s","d","x","t","l","k","p" #each option added to the switch needs to be added here!
-
+	#Array to store potential correct answers to trigger a switch statemen
+    $array = "w","s","d","x","t","l","k","p" #each option added to the switch needs to be added here!
+    
+    #Takes the input given by user
 	$input = Read-Host '	>>MAIN MENU<<
 	
 OPTIONS:
@@ -38,15 +40,16 @@ OPTIONS:
 (S) Start
 (X) Exit 
 (T) Test 
->> Your Input? '#Takes the input given by user
+>> Your Input? '
 	
-	
+	#If input isnt in the array above, ask for input again
 	if($array -notcontains $input){
 		Write-Host ">>> Not a correct answer, Try again..."
 		user_input #calls this function if the $input didnt match $array
-	}#If input isnt in the array above, ask for input again
-
-	return $input #on a correct answer- returns answer for use
+	}
+    
+    #on a correct answer- returns answer for use
+	return $input 
 }
 
 
@@ -61,6 +64,7 @@ function Get_Devices{
 }
 
 function Kill_ADB{
+
 		.\adb kill-server
 		Write-Host '>>> ADB Killed..'
 		Start-Sleep 1		
@@ -116,30 +120,31 @@ $clientIP = "192.168.0.30:5555" #just testing variables and how they apply
 
 switch($input)
 {
+    #option 'W'
     w {
 		Wifi_ADB		
 	}
-	
+	#option 'L'
 	l {
 		USB_ADB		
 	}
-	
+	#option 'S'
     s {
 		start_Mirror
 	}
-	
+	#option 'D'
     d {
 	Get_Devices
 	user_input		
 	}
-	
+	#option 'K'
 	k {
 		Kill_ADB
 		user_input		
 	}
-	
+	#option 'X'
 	x {exit_app}
-	
+	#option 'T'
 	t {	
 		test_func(0)
 		user_input			
