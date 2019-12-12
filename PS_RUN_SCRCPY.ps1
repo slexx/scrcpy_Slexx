@@ -45,7 +45,8 @@ OPTIONS:
 	#If input isnt in the array above, ask for input again
 	if($array -notcontains $input){
 		Write-Host ">>> Not a correct answer, Try again..."
-		user_input #calls this function if the $input didnt match $array
+		#user_input #calls this function if the $input didnt match $array
+		return user_input
 	}
     
     #on a correct answer- returns answer for use
@@ -159,4 +160,4 @@ switch($input)
 
 
 #pause
-user_input
+#user_input

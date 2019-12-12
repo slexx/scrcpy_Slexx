@@ -22,4 +22,8 @@ Copy device clipboard to computer	Ctrl+c	Cmd+c
 Paste computer clipboard to device	Ctrl+v	Cmd+v
 Copy computer clipboard to device	Ctrl+Shift+v	Cmd+Shift+v
 Enable/disable FPS counter (on stdout)	Ctrl+i	Cmd+i
+
+To set your device IP Address so that on each new instance of scrcpy you can just edit the settings.txt file's first line with your devices address and it will handle the rest!
+
+This sofware is still a work in progress and has bugs and glitches that need to be worked out! please be patient with me and send any feedback to Slex on his discord https://discord.gg/mdquydu
 ```

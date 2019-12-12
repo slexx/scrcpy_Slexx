@@ -1,0 +1,3 @@
+172.16.69.90:5556
+<# Go into your phones settings> About Phone> and find the "IP Address" and replace 
+the number on the first line with the numbers you find in that field #>
