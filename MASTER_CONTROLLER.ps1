@@ -12,19 +12,25 @@ write-host " ===== MODE: $connection_mode =====
 "
 
 write-host "1. (K) Kill ADB Server (Do first if you're not sure!)"
-write-host "2. (D) Device List"
-write-host "3. (ID) This will check the settings.txt file and update the ClientID accordinly!"
-write-host "4. (IDC) Outputs the current ClientID to confirm it matches the one on your phones settings screen"
-write-host "5. (W) Wifi Mode"
-write-host "6. (U) USB Mode"
+write-host "1.5(C) Attempt a connection with the client in settings.txt"
+write-host "2. (D) Device List - Check if any devices show up"
+write-host "3. (ID) ID-Check to display whats stored in settings.txt. Also updates the clientID Variable"
+write-host "4. (IDC)ID-Check to confirm whats in settings.txt matches whats found in your phones settings About section"
+write-host "5. (W) Wifi Mode (Device Must be Connected via USB)"
+write-host "6. (U) USB Mode (Device Must be Connected via USB)"
 write-host "S. (S) Start the screen mirroring on the currently set mode (Wifi/USB)"
-write-host "C. (C) Clear the console and return to main menu.."
+write-host "Clr. (CLR) Clear the console and return to main menu.."
 write-host "Q. (Q) To quit"
 }
 
 function Get_Devices{
 		$devices = .\adb devices
 		return $devices	
+}
+
+function Connect{
+	Write-Host ">>> Attempting to connect to client.."
+	.\adb connect $clientID
 }
 
 function Kill_ADB{
@@ -50,8 +56,8 @@ function Wifi_ADB{
 		#Write-Host ">>> ADB Set to USB mode.."
 		#Start-Sleep 1
 		
-		.\adb tcpip 5556 #Re-Set to TCPIP MOde, set port to 5555
-		Write-Host ">>> ADB Set back to TCPIP:5555"
+		.\adb tcpip 5556 #Re-Set to TCPIP MOde, set port to 5556
+		Write-Host ">>> ADB Set back to TCPIP:5556"
 		Start-Sleep 1
 		write-host "disconnect any device from the USB cable and hit any button to continute..."
 		pause
@@ -80,7 +86,7 @@ $global:connection_mode = "default"
 
 do{
 	$global:clientID = Get-Content -Path .\settings.txt -TotalCount 1 #IP address of the device you want to connect to, find this in the 'About Phone' section in your phones settings window
-	$array = "k","d","c","q","id","idc","u","w","s" #add any valid choices to this array for it to work
+	$array = "k","d","clr","c","q","id","idc","u","w","s" #add any valid choices to this array for it to work
 	#set_client_id
 	show_menu
 	$selection = Read-Host "Input"
@@ -98,7 +104,7 @@ do{
 					'>>> Openining the device list'
 					Get_Devices
 					}
-				'c' {
+				'clr' {
 					clear-host
 					}
 				'id'{					
