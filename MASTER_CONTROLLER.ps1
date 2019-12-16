@@ -100,6 +100,9 @@ do{
 					'>>> You chose to kill the ADB Server'
 					Kill_ADB
 					}
+				'c' {
+					Connect
+					}
 				'd' {
 					'>>> Openining the device list'
 					Get_Devices
